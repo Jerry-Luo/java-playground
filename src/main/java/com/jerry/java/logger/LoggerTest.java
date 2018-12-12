@@ -18,7 +18,7 @@ public class LoggerTest {
         log.info("industrial strength");
         log.entering(logClass, logMethod, "enter");
         log.exiting(logClass, logMethod, "exiting");
-        log.throwing(logClass,"main", new RuntimeException("test"));
+        log.throwing(logClass, "main", new RuntimeException("test"));
 
         System.out.println("========================");
 
@@ -64,8 +64,8 @@ public class LoggerTest {
         System.out.println("test stacktrace:" + description);
 
         Thread.setDefaultUncaughtExceptionHandler(
-                new Thread.UncaughtExceptionHandler(){
-                    public void uncaughtException (Thread t, Throwable e){
+                new Thread.UncaughtExceptionHandler() {
+                    public void uncaughtException(Thread t, Throwable e) {
                         // save infomation in log file
                         System.out.println("发生错误了，但是我自己捕获了。 thread:" + t.getName() + " throwable:" + e);
                     }

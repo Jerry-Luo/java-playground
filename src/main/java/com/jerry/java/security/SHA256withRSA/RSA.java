@@ -16,21 +16,23 @@ import java.util.Map;
  * Description   生成 RSA 密钥对
  * Copyright     Copyright (c) 2016-2022 All Rights Reserved.
  * Company       fintechzh.com Inc.
- * @author       罗建伟
- * @date         2018/7/11 17:02
- * @version      1.0
+ *
+ * @author 罗建伟
+ * @version 1.0
+ * @date 2018/7/11 17:02
  */
 public class RSA {
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(RSA.class);
 
     public static final String KEY_ALGORITHM = "RSA";
-    public static final String PUBLIC_KEY    = "publicKey";
-    public static final String PRIVATE_KEY   = "privateKey";
-    public static final int    KEY_SIZE      = 2048;
+    public static final String PUBLIC_KEY = "publicKey";
+    public static final String PRIVATE_KEY = "privateKey";
+    public static final int KEY_SIZE = 2048;
     public static final String CHAR_SET_NAME = "UTF-8";
 
     /**
      * 生成密钥对
+     *
      * @return 密钥对
      */
     public static Map<String, byte[]> generateKeyBytes() {
@@ -52,6 +54,7 @@ public class RSA {
 
     /**
      * 生成 Base64 编码后的密钥对
+     *
      * @return Base64 编码后的密钥对
      */
     public static Map<String, String> generateBase64KeyPair() {
@@ -70,6 +73,7 @@ public class RSA {
 
     /**
      * 还原公钥
+     *
      * @param keyBytes keyBytes
      * @return PublicKey
      */
@@ -86,6 +90,7 @@ public class RSA {
 
     /**
      * 还原 Base64 编码后的公钥
+     *
      * @param base64PubKey base64PubKey
      * @return PublicKey
      */
@@ -118,6 +123,7 @@ public class RSA {
 
     /**
      * 还原 Base64 编码后的私钥
+     *
      * @param base64PrvtKey base64PrvtKey
      * @return PrivateKey
      */

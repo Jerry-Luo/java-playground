@@ -11,10 +11,10 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  */
 public class RWSample {
 
-    private final Map<String, String>    m   = new TreeMap<>();
+    private final Map<String, String> m = new TreeMap<>();
     private final ReentrantReadWriteLock rwl = new ReentrantReadWriteLock();
-    private final Lock                   r   = rwl.readLock();
-    private final Lock                   w   = rwl.writeLock();
+    private final Lock r = rwl.readLock();
+    private final Lock w = rwl.writeLock();
 
     public String get(String key) {
         r.lock();

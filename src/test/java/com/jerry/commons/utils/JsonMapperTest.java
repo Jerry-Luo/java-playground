@@ -33,20 +33,23 @@ public class JsonMapperTest {
     @Test
     public void testStringToObj() {
         String jsonString = "{\"name\":\"test\",\"pass\":\"testpass\"}";
-        User user = JsonMapper.str2Obj(jsonString, new TypeReference<>() {});
-        System.out.println(user.getName()+ "  " + user.getPass());
+        User user = JsonMapper.str2Obj(jsonString, new TypeReference<>() {
+        });
+        System.out.println(user.getName() + "  " + user.getPass());
 
         System.out.println("---------------");
 
         String listJsonString = "[{\"name\":\"test\",\"pass\":\"testpass\"},{\"name\":\"test\",\"pass\":\"testpass\"},{\"name\":\"test\",\"pass\":\"testpass\"}]";
-        List<User> list = JsonMapper.str2Obj(listJsonString, new TypeReference<>() {});
+        List<User> list = JsonMapper.str2Obj(listJsonString, new TypeReference<>() {
+        });
         for (User u : list) {
             System.out.println(u.getName() + " " + u.getPass());
         }
 
         System.out.println("---------------");
         String mapJsonString = "{\"one\":{\"name\":\"test\",\"pass\":\"testpass\"},\"two\":{\"name\":\"test\",\"pass\":\"testpass\"}}";
-        Map<String, User> map = JsonMapper.str2Obj(mapJsonString, new TypeReference<>() {});
+        Map<String, User> map = JsonMapper.str2Obj(mapJsonString, new TypeReference<>() {
+        });
         for (String key : map.keySet()) {
             User u = map.get(key);
             System.out.println(u.getName() + " " + u.getPass());

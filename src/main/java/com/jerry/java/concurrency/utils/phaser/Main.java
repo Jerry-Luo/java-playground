@@ -3,7 +3,7 @@ package com.jerry.java.concurrency.utils.phaser;
 /**
  * 题目：5个学生参加考试，一共有三道题，要求所有学生到齐才能开始考试
  * ，全部做完第一题，才能继续做第二题，后面类似。
- *
+ * <p>
  * Phaser有phase和party两个重要状态，
  * phase表示阶段，party表示每个阶段的线程个数，
  * 只有每个线程都执行了phaser.arriveAndAwaitAdvance();

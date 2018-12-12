@@ -7,9 +7,9 @@ public class RsaKeyPair {
 
     private final PublicKey publicKey;
 
-    public RsaKeyPair(PublicKey publicKey,PrivateKey privateKey){
-        this.privateKey=privateKey;
-        this.publicKey=publicKey;
+    public RsaKeyPair(PublicKey publicKey, PrivateKey privateKey) {
+        this.privateKey = privateKey;
+        this.publicKey = publicKey;
     }
 
     public PrivateKey getPrivateKey() {

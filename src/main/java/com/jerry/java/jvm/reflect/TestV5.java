@@ -40,8 +40,12 @@ public class TestV5 {
             method2.invoke(null, 0);
         }
     }
-    public static void target1(int i) { }
-    public static void target2(int i) { }
+
+    public static void target1(int i) {
+    }
+
+    public static void target2(int i) {
+    }
 }
 
 //除此之外，我们还可以提高 Java 虚拟机关于每个调用能够记录的类型数目（对应虚拟机参数 -XX:TypeProfileWidth，默认值为 2，这里设置为 3）。

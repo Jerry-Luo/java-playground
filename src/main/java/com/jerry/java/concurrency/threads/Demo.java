@@ -6,7 +6,7 @@ import java.util.concurrent.Future;
 
 public class Demo {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        Runnable task = ()-> System.out.println("Hello World!!");
+        Runnable task = () -> System.out.println("Hello World!!");
         Future future = Executors.newFixedThreadPool(1).submit(task);
         Object result = future.get();
         System.out.println(result);

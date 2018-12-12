@@ -17,6 +17,6 @@ public class ManyToManySenderOne {
     public void send(String msg) {
         String sendMsg = msg + " " + DateFormatUtils.format(new Date(), CommonConst.DATE_FORMAT_YMDHMSS);
         System.out.println("Sender1 : " + sendMsg);
-        this.rabbitTemplate.convertAndSend("DirectExchange","helloQueue", sendMsg);
+        this.rabbitTemplate.convertAndSend("DirectExchange", "helloQueue", sendMsg);
     }
 }

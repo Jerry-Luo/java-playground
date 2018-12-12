@@ -12,7 +12,6 @@ public class Consumer {
     public static void main(String[] args) throws Exception {
 
 
-
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         factory.setUsername("guest");
@@ -25,7 +24,7 @@ public class Consumer {
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                 long deliveryTag = envelope.getDeliveryTag();
                 //do some work async
-                System.out.println(body[0] +" " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
+                System.out.println(body[0] + " " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
             }
         });
     }

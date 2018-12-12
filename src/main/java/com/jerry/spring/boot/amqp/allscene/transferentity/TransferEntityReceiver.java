@@ -9,6 +9,6 @@ public class TransferEntityReceiver {
 
     @RabbitHandler
     public void process(User user) {
-        System.out.println("user receive  : " + user.getName()+"/"+user.getPass());
+        System.out.println("user receive  : " + user.getName() + "/" + user.getPass());
     }
 }

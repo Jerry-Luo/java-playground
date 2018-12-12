@@ -27,8 +27,8 @@ public class Producer {
 //            channel.basicPublish("queue1", "queue1", new AMQP.BasicProperties.Builder().expiration(String.valueOf(i * 1000)).build(),
 //                    new byte[] { i });
 
-            channel.basicPublish("queue1", "queue1", new AMQP.BasicProperties.Builder().expiration(String.valueOf(i*3000)).build(),
-                    new byte[] { i });
+            channel.basicPublish("queue1", "queue1", new AMQP.BasicProperties.Builder().expiration(String.valueOf(i * 3000)).build(),
+                    new byte[]{i});
         }
         System.out.println("发送完消息 " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
 

@@ -11,10 +11,10 @@ public class TransferEntitySender {
     private AmqpTemplate rabbitTemplate;
 
     public void send() {
-        User user=new User();
+        User user = new User();
         user.setName("张三");
         user.setPass("123456789");
-        System.out.println("user send : " + user.getName()+"/"+user.getPass());
-        this.rabbitTemplate.convertAndSend("DirectExchange","userQueue", user);
+        System.out.println("user send : " + user.getName() + "/" + user.getPass());
+        this.rabbitTemplate.convertAndSend("DirectExchange", "userQueue", user);
     }
 }

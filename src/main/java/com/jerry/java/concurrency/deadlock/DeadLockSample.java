@@ -11,7 +11,7 @@ public class DeadLockSample extends Thread {
         this.second = second;
     }
 
-    public  void run() {
+    public void run() {
         synchronized (first) {
             System.out.println(this.getName() + " obtained: " + first);
             try {

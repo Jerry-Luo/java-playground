@@ -11,6 +11,7 @@ public class TestV4 {
     public static void target(int i) {
         // 空方法
     }
+
     public static void main(String[] args) throws Exception {
         Class<?> klass = Class.forName("com.jerry.java.jvm.reflect.TestV4");
         Method method = klass.getMethod("target", int.class);

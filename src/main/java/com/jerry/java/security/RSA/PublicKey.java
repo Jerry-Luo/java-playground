@@ -8,9 +8,9 @@ public class PublicKey {
 
     private final BigInteger b;
 
-    public PublicKey(BigInteger n,BigInteger b){
-        this.n=n;
-        this.b=b;
+    public PublicKey(BigInteger n, BigInteger b) {
+        this.n = n;
+        this.b = b;
     }
 
     public BigInteger getN() {

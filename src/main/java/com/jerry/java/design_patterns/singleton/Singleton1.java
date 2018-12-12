@@ -6,7 +6,8 @@ public class Singleton1 {
     // 这里的 volatile 能够提供可见性，以及保证 getInstance 返回的是初始化完全的对象。
     private static volatile Singleton1 singleton1 = null;
 
-    private Singleton1 () {}
+    private Singleton1() {
+    }
 
     public static Singleton1 getSingleton1() {
         if (singleton1 == null) { // 在同步前进行 null 检查，以尽量避免进入相对昂贵的同步块。尽量避免重复进入同步块。

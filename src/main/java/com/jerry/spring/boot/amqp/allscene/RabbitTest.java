@@ -51,8 +51,8 @@ public class RabbitTest {
      */
     @PostMapping("/oneToMany")
     public void oneToMany() {
-        for(int i=0;i<10;i++){
-            oneToManySender.send("hellomsg:"+i);
+        for (int i = 0; i < 10; i++) {
+            oneToManySender.send("hellomsg:" + i);
         }
     }
 
@@ -61,9 +61,9 @@ public class RabbitTest {
      */
     @PostMapping("/manyToMany")
     public void manyToMany() {
-        for(int i=0;i<10;i++){
-            manyToManySenderOne.send("manyToManySenderOne:"+i);
-            manyToManySenderTwo.send("manyToManySenderTwo:"+i);
+        for (int i = 0; i < 10; i++) {
+            manyToManySenderOne.send("manyToManySenderOne:" + i);
+            manyToManySenderTwo.send("manyToManySenderTwo:" + i);
         }
     }
 

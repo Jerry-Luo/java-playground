@@ -35,10 +35,10 @@ public class ThreadSafeSample {
 //    35: monitorexit
     // 代码中使用 synchronized 非常便利，如果用来修饰静态方法，其等同于利用下面代码将方法体囊括进来：
     // synchronized (ClassName.class) {}
-    public void safeAction () {
+    public void safeAction() {
         while (sharedState < 1000000) {
 
-            int former,latter;
+            int former, latter;
 
             synchronized (this) {
                 former = sharedState++;
@@ -51,15 +51,16 @@ public class ThreadSafeSample {
             }
         }
     }
+
     // 这种写法并不安全  运行结果 Observed data race, former is 8812, latter is 8819
     // 可能用法有问题，具体可以参照 JDK 中的 ArrayBlockingQueue 里面的用法
-    public void reentrantLock () {
+    public void reentrantLock() {
         // 这里是演示创建公平锁，一般情况不需要。
         ReentrantLock fairLock = new ReentrantLock(true);
         fairLock.lock();
         try {
             while (sharedState < 1000000) {
-                int former,latter;
+                int former, latter;
                 // do something
                 former = sharedState++;
                 latter = sharedState;
@@ -68,7 +69,7 @@ public class ThreadSafeSample {
                     return;
                 }
             }
-        }finally {
+        } finally {
             fairLock.unlock();
         }
     }

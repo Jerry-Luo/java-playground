@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 @Component
-public class CallBackSender implements  RabbitTemplate.ConfirmCallback{
+public class CallBackSender implements RabbitTemplate.ConfirmCallback {
 
     @Autowired
     private RabbitTemplate rabbitTemplatenew;
@@ -16,8 +16,8 @@ public class CallBackSender implements  RabbitTemplate.ConfirmCallback{
     public void send() {
 
         rabbitTemplatenew.setConfirmCallback(this);
-        String msg="callbackSender : i am callback sender";
-        System.out.println(msg );
+        String msg = "callbackSender : i am callback sender";
+        System.out.println(msg);
         CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
         System.out.println("callbackSender UUID: " + correlationData.getId());
         this.rabbitTemplatenew.convertAndSend("exchange", "topic.messages", msg, correlationData);

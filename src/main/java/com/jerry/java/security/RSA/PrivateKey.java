@@ -8,9 +8,9 @@ public class PrivateKey {
 
     private final BigInteger a;
 
-    public PrivateKey(BigInteger n,BigInteger a){
-        this.n=n;
-        this.a=a;
+    public PrivateKey(BigInteger n, BigInteger a) {
+        this.n = n;
+        this.a = a;
     }
 
     public BigInteger getN() {

@@ -8,7 +8,7 @@ public class DeadlockDemo {
 }
 
 class ThreadA extends Thread {
-    public void run () {
+    public void run() {
         System.out.println("-----------A-----------");
         synchronized (A.A) {
             System.out.println("我要开始执行任务A, " + Thread.currentThread());
@@ -28,7 +28,7 @@ class ThreadA extends Thread {
 }
 
 class ThreadB extends Thread {
-    public void run () {
+    public void run() {
         System.out.println("-----------B-----------");
         synchronized (B.B) {
             System.out.println("我要开始执行任务B, " + Thread.currentThread());
@@ -48,11 +48,11 @@ class ThreadB extends Thread {
 }
 
 class A {
-    static final Integer A =  Integer.valueOf("1");
+    static final Integer A = Integer.valueOf("1");
 }
 
 class B {
-    static final Integer B =  Integer.valueOf("3");
+    static final Integer B = Integer.valueOf("3");
 }
 
 //"Thread-0" #13 prio=5 os_prio=31 tid=0x00007fb0100d3000 nid=0x8d03 waiting for monitor entry  [0x000070000a2e0000]

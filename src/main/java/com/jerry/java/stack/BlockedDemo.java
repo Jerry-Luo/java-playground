@@ -6,7 +6,7 @@ public class BlockedDemo {
     public static void main(String[] args) {
         final Thread thread = new Thread() {
             @Override
-            public void run(){
+            public void run() {
                 synchronized (this) {
                     System.out.println(Thread.currentThread().getName() + "   1");
                     try {

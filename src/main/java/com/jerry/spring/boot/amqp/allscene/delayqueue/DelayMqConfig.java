@@ -31,12 +31,12 @@ public class DelayMqConfig {
 
 
     @Bean
-    DirectExchange delayQueueDeadLetterExchange(){
+    DirectExchange delayQueueDeadLetterExchange() {
         return new DirectExchange("delayQueueDeadLetterExchange");
     }
 
     @Bean
-    DirectExchange delay5sQueueExchange(){
+    DirectExchange delay5sQueueExchange() {
         return new DirectExchange("delay5sQueueExchange");
     }
 

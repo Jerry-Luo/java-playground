@@ -23,7 +23,7 @@ public class Delay5sMsgSender {
     @Autowired
     RabbitTemplate rabbitTemplate;
 
-    public void send (String expiration) {
+    public void send(String expiration) {
 
         // 发送普通字符串消息
         String msg = "hello delay queue " + DateFormatUtils.format(new Date(), CommonConst.DATE_FORMAT_YMDHMSS);

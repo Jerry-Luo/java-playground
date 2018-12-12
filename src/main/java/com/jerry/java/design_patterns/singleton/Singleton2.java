@@ -4,7 +4,8 @@ package com.jerry.java.design_patterns.singleton;
 // 这种和 Signleton1 用双检锁的实现都能保证线程安全，不过语法稍显晦涩，未必有特别的优势。
 public class Singleton2 {
 
-    private Singleton2() {}
+    private Singleton2() {
+    }
 
     public static Singleton2 getSingleton2() {
         return Holder.singleton2;

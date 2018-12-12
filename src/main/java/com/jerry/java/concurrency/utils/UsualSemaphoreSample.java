@@ -16,7 +16,7 @@ public class UsualSemaphoreSample {
 
 class SemaphoreWorker implements Runnable {
 
-    private String    name;
+    private String name;
     private Semaphore semaphore;
 
     public SemaphoreWorker(Semaphore semaphore) {

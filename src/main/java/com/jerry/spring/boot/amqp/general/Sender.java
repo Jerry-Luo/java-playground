@@ -37,7 +37,7 @@ public class Sender implements RabbitTemplate.ConfirmCallback, ReturnCallback, I
     }
 
     //发送消息，不需要实现任何接口，供外部调用。
-    public void send(String msg){
+    public void send(String msg) {
 
 //        rabbitTemplate.send(message);   //发消息，参数类型为org.springframework.amqp.core.Message
 //        rabbitTemplate.convertAndSend(object); //转换并发送消息。 将参数对象转换为org.springframework.amqp.core.Message后发送

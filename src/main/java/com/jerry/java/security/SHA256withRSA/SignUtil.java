@@ -9,9 +9,10 @@ import java.util.Base64;
  * Description   SHA256withRSA 签名工具类
  * Copyright     Copyright (c) 2016-2022 All Rights Reserved.
  * Company       fintechzh.com Inc.
- * @author       罗建伟
- * @date         2018/7/11 17:02
- * @version      1.0
+ *
+ * @author 罗建伟
+ * @version 1.0
+ * @date 2018/7/11 17:02
  */
 public class SignUtil {
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SignUtil.class);
@@ -21,8 +22,9 @@ public class SignUtil {
 
     /**
      * 签名
+     *
      * @param privateKey 私钥
-     * @param src 明文
+     * @param src        明文
      * @return 签名后的数据
      */
     public static byte[] sign(PrivateKey privateKey, String src) {
@@ -51,21 +53,23 @@ public class SignUtil {
 
     /**
      * 包装后的签名方法，直接传入编码后的私钥字符串和待签名字符串即可生成签名
+     *
      * @param privateKey 私钥字符串
-     * @param src 待签名字符串
+     * @param src        待签名字符串
      * @return 签名后的字符串
      */
-    public static String sign (String privateKey, String src) {
+    public static String sign(String privateKey, String src) {
         PrivateKey prvt = RSA.restorePrivateKey(privateKey);
-        byte[] signed = sign (prvt, src);
+        byte[] signed = sign(prvt, src);
         return toBase64String(signed);
     }
 
     /**
      * 验签
+     *
      * @param publicKey 公钥
-     * @param src 明文
-     * @param signed 签名
+     * @param src       明文
+     * @param signed    签名
      */
     public static boolean verifySign(PublicKey publicKey, String src, byte[] signed) {
 
@@ -88,12 +92,13 @@ public class SignUtil {
 
     /**
      * 包装的验签名方法，可支持Base64编码后的字符串公钥，及 Base64 编码后的签名字符创
+     *
      * @param publicKey 公钥字符串
-     * @param src 待验签字符串
-     * @param signed 需要验证的签名
+     * @param src       待验签字符串
+     * @param signed    需要验证的签名
      * @return 验签结果
      */
-    public static boolean verifySign (String publicKey, String src, String signed) {
+    public static boolean verifySign(String publicKey, String src, String signed) {
         PublicKey pub = RSA.restorePublicKey(publicKey);
         byte[] signedBytes = Base64.getDecoder().decode(signed);
         return verifySign(pub, src, signedBytes);
@@ -101,6 +106,7 @@ public class SignUtil {
 
     /**
      * bytes[]换成16进制字符串
+     *
      * @param src 待编码的byte数组
      * @return 十六进制字符串
      */
@@ -122,6 +128,7 @@ public class SignUtil {
 
     /**
      * bytes[]换成 BASE64 字符串
+     *
      * @param src 待编码的byte数组
      * @return BASE64 字符串
      */

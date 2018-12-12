@@ -29,6 +29,7 @@ public class RabbitMqConfig implements RabbitListenerConfigurer {
     public Queue queueMessage() {
         return new Queue("topic.message");
     }
+
     @Bean
     public Queue queueMessages() {
         return new Queue("topic.messages");
@@ -62,7 +63,7 @@ public class RabbitMqConfig implements RabbitListenerConfigurer {
     }
 
     @Bean
-    DirectExchange directExchange(){
+    DirectExchange directExchange() {
         DirectExchange exchange = new DirectExchange("DirectExchange");
         return exchange;
     }
@@ -94,7 +95,7 @@ public class RabbitMqConfig implements RabbitListenerConfigurer {
     }
 
     @Bean
-    Binding bindingExchangeA(Queue AMessage,FanoutExchange fanoutExchange) {
+    Binding bindingExchangeA(Queue AMessage, FanoutExchange fanoutExchange) {
         return BindingBuilder.bind(AMessage).to(fanoutExchange);
     }
 
@@ -115,20 +116,24 @@ public class RabbitMqConfig implements RabbitListenerConfigurer {
         rabbitTemplate.setMessageConverter(producerJackson2MessageConverter());
         return rabbitTemplate;
     }
+
     @Bean
     public Jackson2JsonMessageConverter producerJackson2MessageConverter() {
         return new Jackson2JsonMessageConverter();
     }
+
     @Override
     public void configureRabbitListeners(RabbitListenerEndpointRegistrar registrar) {
         registrar.setMessageHandlerMethodFactory(messageHandlerMethodFactory());
     }
+
     @Bean
     MessageHandlerMethodFactory messageHandlerMethodFactory() {
         DefaultMessageHandlerMethodFactory messageHandlerMethodFactory = new DefaultMessageHandlerMethodFactory();
         messageHandlerMethodFactory.setMessageConverter(consumerJackson2MessageConverter());
         return messageHandlerMethodFactory;
     }
+
     @Bean
     public MappingJackson2MessageConverter consumerJackson2MessageConverter() {
         return new MappingJackson2MessageConverter();

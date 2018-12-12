@@ -10,7 +10,7 @@ public class TopicMessagesReceiver {
 
     @RabbitHandler
     public void process(String msg) {
-        System.out.println("topicMessagesReceiver  : " +msg);
+        System.out.println("topicMessagesReceiver  : " + msg);
     }
 
 }

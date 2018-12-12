@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
 
-@RunWith(value= SpringJUnit4ClassRunner.class)
+@RunWith(value = SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = RabbitMqGeneralApplication.class)
 public class RabbitMqGeneralApplicationTest {
     @Autowired
@@ -16,7 +16,7 @@ public class RabbitMqGeneralApplicationTest {
 
     @Test
     public void sendTest() throws Exception {
-        while(true){
+        while (true) {
             String msg = new Date().toString();
             sender.send(msg);
             Thread.sleep(1000);

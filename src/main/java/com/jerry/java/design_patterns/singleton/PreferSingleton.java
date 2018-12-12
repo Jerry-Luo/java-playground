@@ -6,7 +6,8 @@ package com.jerry.java.design_patterns.singleton;
  */
 public class PreferSingleton {
 
-    private PreferSingleton() {}
+    private PreferSingleton() {
+    }
 
     private static class LazyHolder {
         static final PreferSingleton INSTANCE = new PreferSingleton();

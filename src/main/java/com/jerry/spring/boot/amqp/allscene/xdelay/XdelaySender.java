@@ -21,13 +21,13 @@ public class XdelaySender {
     private RabbitTemplate rabbitTemplate;
 
     // 测试不成功，经查看资料，x-delay 需要配合 rabbitmq 的延时消息队列插件
-    public void send (Integer delay) {
+    public void send(Integer delay) {
         MessageProperties mp = new MessageProperties();
         mp.setDelay(delay);
         String msg = "test x-delay msg " + DateFormatUtils.format(new Date(), CommonConst.DATE_FORMAT_YMDHMSS);
         Message m = new Message(msg.getBytes(), mp);
         LOGGER.info("sended msg : {}", msg);
-        rabbitTemplate.send("xDelayExchange","xDelayRoutingKey",m);
+        rabbitTemplate.send("xDelayExchange", "xDelayRoutingKey", m);
 //        rabbitTemplate.convertAndSend("xDelayExchange","xDelayRoutingKey",msg);
     }
 }
