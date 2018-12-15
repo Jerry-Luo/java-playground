@@ -10,7 +10,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 
-
+/**
+ * Filename      JsonMapper
+ * Description   简单的json跟java对象转换工具
+ * Copyright     Copyright (c) 2016-2022 All Rights Reserved.
+ * Company       fintechzh.com Inc.
+ * @author       罗建伟
+ * @date         2018-12-12 10:59
+ * @version      1.0
+ */
 public class JsonMapper {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JsonMapper.class);
