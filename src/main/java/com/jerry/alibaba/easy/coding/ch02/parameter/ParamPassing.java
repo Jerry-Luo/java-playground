@@ -1,4 +1,4 @@
-package com.jerry.alieasycoding.ch02.parameter;
+package com.jerry.alibaba.easy.coding.ch02.parameter;
 
 import java.util.*;
 
