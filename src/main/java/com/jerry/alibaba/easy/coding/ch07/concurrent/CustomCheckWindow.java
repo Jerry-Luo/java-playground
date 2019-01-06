@@ -5,7 +5,7 @@ import java.util.concurrent.Semaphore;
 public class CustomCheckWindow {
 
     public static void main(String[] args) {
-        // 设定 3 个信号量，即 3 哥服务窗口
+        // 设定 3 个信号量，即 3 个服务窗口
         Semaphore semaphore = new Semaphore(3);
 
         // 这个队伍排了 5 个人

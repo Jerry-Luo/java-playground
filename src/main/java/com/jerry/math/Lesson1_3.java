@@ -1,45 +1,8 @@
 package com.jerry.math;
 
-import java.math.BigInteger;
-
-import static com.jerry.math.Lesson1_1.decimalToBinary;
+import com.jerry.myutil.MathUtil;
 
 public class Lesson1_3 {
-
-    /**
-     * @Description: 二进制按位“或”的操作
-     * @param num1- 第一个数字，num2- 第二个数字
-     * @return 二进制按位“或”的结果
-     */
-    public static int or(int num1, int num2) {
-
-        return (num1 | num2);
-
-    }
-
-    /**
-     * @Description: 二进制按位“与”的操作
-     * @param num1- 第一个数字，num2- 第二个数字
-     * @return 二进制按位“与”的结果
-     */
-    public static int and(int num1, int num2) {
-
-        return (num1 & num2);
-
-    }
-
-    /**
-    
-     * @Description: 二进制按位“异或”的操作
-     * @param num1- 第一个数字，num2- 第二个数字
-     * @return 二进制按位“异或”的结果
-     */
-
-    public static int xor(int num1, int num2) {
-
-        return (num1 ^ num2);
-
-    }
 
     public static void main(String[] args) {
 
@@ -47,20 +10,17 @@ public class Lesson1_3 {
         int b = 35;
 
         // 获取十进制数 53 和 35 的按位“或”
-        System.out.println(String.format(" 数字 %d(%s) 和数字 %d(%s) 的按位‘或’结果是 %d(%s)",
-                a, decimalToBinary(a), b, decimalToBinary(b), Lesson1_3.or(a, b), decimalToBinary(Lesson1_3.or(a, b))));
+        System.out.println(String.format(" 数字 %d(%s) 和数字 %d(%s) 的按位‘或’结果是 %d(%s)", a, MathUtil.decimalToBinary(a), b, MathUtil.decimalToBinary(b), MathUtil.or(a, b),
+            MathUtil.decimalToBinary(MathUtil.or(a, b))));
 
         // 获取十进制数 53 和 35 的按位“与”
-        System.out.println(String.format(" 数字 %d(%s) 和数字 %d(%s) 的按位‘与’结果是 %d(%s)",
-                a, decimalToBinary(a), b, decimalToBinary(b), Lesson1_3.and(a, b), decimalToBinary(Lesson1_3.and(a, b))));
+        System.out.println(String.format(" 数字 %d(%s) 和数字 %d(%s) 的按位‘与’结果是 %d(%s)", a, MathUtil.decimalToBinary(a), b, MathUtil.decimalToBinary(b), MathUtil.and(a, b),
+            MathUtil.decimalToBinary(MathUtil.and(a, b))));
 
         // 获取十进制数 53 和 35 的按位“异或”
-        System.out.println(String.format(" 数字 %d(%s) 和数字 %d(%s) 的按位‘异或’结果是 %d(%s)",
-                a, decimalToBinary(a), a, decimalToBinary(a), Lesson1_3.xor(a, a), decimalToBinary(Lesson1_3.xor(a, a))));
+        System.out.println(String.format(" 数字 %d(%s) 和数字 %d(%s) 的按位‘异或’结果是 %d(%s)", a, MathUtil.decimalToBinary(a), a, MathUtil.decimalToBinary(a), MathUtil.xor(a, a),
+            MathUtil.decimalToBinary(MathUtil.xor(a, a))));
 
     }
-
-
-
 
 }
