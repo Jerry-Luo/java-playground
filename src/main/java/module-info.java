@@ -22,6 +22,14 @@ module javaplayground {
     exports com.jerry.spring.boot.amqp.allscene.xdelay;
     opens com.jerry.spring.boot.amqp.allscene.xdelay;
 
+//    exports com.jerry.java.spi.service;
+//    opens com.jerry.java.spi.service;
+//    exports com.jerry.java.spi.impl;
+//    opens com.jerry.java.spi.impl;
+    uses com.jerry.java.spi.service.DogService;
+//    uses com.jerry.java.spi.impl.BlackDogServiceImpl;
+//    uses com.jerry.java.spi.impl.WhiteDogServiceImpl;
+
     requires spring.amqp;
     requires spring.rabbit;
     requires spring.messaging;
